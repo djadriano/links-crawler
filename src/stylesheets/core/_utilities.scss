@@ -1,0 +1,44 @@
+#gg {
+  height: 100%;
+}
+
+.gg-u-t-uppercase {
+  text-transform: uppercase;
+}
+
+.gg-u-t-center {
+  text-align: center;
+}
+
+.gg-u-d-block {
+  display: block;
+}
+
+.gg-u-is-not-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.gg-u-container {
+  height: 100%;
+}
+
+.gg-u-icon {
+  line-height: 0;
+}
+
+.gg-u-reset-button {
+  background: none;
+  border: 0;
+  padding: 0;
+}
+
+// Generate Dynamic Utility Classes
+
+@include generate-color-clss;
+@include generate-spaces-clss;
+
+// Generate Font size Classes
+
+@include generate-font-size-clss('Passion');

@@ -1,0 +1,68 @@
+@mixin generate-spaces-clss {
+  @each $space-name, $space-value in $spaces {
+    .gg-u-m-#{$space-name} { margin: $space-value; }
+    .gg-u-mt-#{$space-name} { margin-top: $space-value; }
+    .gg-u-mr-#{$space-name} { margin-right: $space-value; }
+    .gg-u-mb-#{$space-name} { margin-bottom: $space-value; }
+    .gg-u-ml-#{$space-name} { margin-left: $space-value; }
+
+    .gg-u-p-#{$space-name} { padding: $space-value; }
+    .gg-u-pt-#{$space-name} { padding-top: $space-value; }
+    .gg-u-pr-#{$space-name} { padding-right: $space-value; }
+    .gg-u-pb-#{$space-name} { padding-bottom: $space-value; }
+    .gg-u-pl-#{$space-name} { padding-left: $space-value; }
+  }
+}
+
+@mixin generate-font-size-clss($name){
+  $toLowerCaseName: to_lower_case($name);
+  $fontSizes: map-get(map-get($fonts, $name), sizes);
+
+  .gg-u-#{$toLowerCaseName} {
+    font-family: font(#{$name});
+  }
+
+  @each $font-type, $font-properties in $fontSizes {
+    .gg-u-#{$toLowerCaseName}-#{$font-type} {
+      font-family: font(#{$name});
+
+      @each $property, $value in $font-properties {
+        #{$property}: $value;
+      }
+    }
+  }
+}
+
+@mixin generate-color-clss {
+  @each $name, $color in $colors {
+    .gg-u-color-#{$name} {
+      color: $color;
+    }
+
+    .gg-u-bg-#{$name} {
+      background-color: $color;
+    }
+  }
+}
+
+@mixin text-ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+}
+
+@mixin icon-size {
+  svg { @content; }
+}
+
+@mixin font-family($family, $size) {
+  $fontFamily: map-get(map-get($fonts, $family), name);
+  $fontSizesList: map-get(map-get(map-get($fonts, $family), sizes), $size);
+
+  font-family: $fontFamily;
+
+  @each $property, $value in $fontSizesList {
+    #{$property}: $value;
+  }
+}

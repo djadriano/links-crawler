@@ -1,0 +1,27 @@
+@function strip-unit($value) {
+	@return $value / ($value * 0 + 1);
+}
+
+@function mq($mq-value) {
+  @return map-get($mq, $mq-value);
+}
+
+@function font($font-name) {
+  @return map-get(map-get($fonts, $font-name), name);
+}
+
+@function space($space-name) {
+  @return map-get($spaces, $space-name);
+}
+
+@function color($color-name) {
+  @return map-get($colors, inspect($color-name));
+}
+
+@function namespace($namespace-name) {
+  @return map-get($namespace, #{$namespace-name});
+}
+
+@function fluid($min-value: 0, $max-value: $min-value, $min-vw: mq(mobile), $max-vw: mq(wide)) {
+  @return calc(#{$min-value} + #{strip-unit($max-value - $min-value)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
+}

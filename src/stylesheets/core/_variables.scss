@@ -1,0 +1,65 @@
+/* --------------------------------------------------- */
+/* Default Variables */
+/* --------------------------------------------------- */
+
+$base-font-size: 62.5%;
+
+/* --------------------------------------------------- */
+/* Map Configs */
+/* --------------------------------------------------- */
+
+/* Media Queries value is: value / 16 - For example: 320/16 */
+
+$mq: (
+  mobile : 20rem,
+  tablet : 48rem,
+  laptop : 60rem,
+  desktop: 80rem,
+  wide   : 100rem
+);
+
+$colors: (
+  'black': #000000,
+  'white': #ffffff,
+  'gray': #b2b2b2,
+  'red': #ff5757
+);
+
+$fonts: (
+  Passion: (
+    name: 'Roboto',
+    sizes:(
+      smallest: (
+        font-size: fluid(1.1rem, 1.1rem),
+        line-height: 130%
+      ),
+      small: (
+        font-size: fluid(1.2rem, 1.2rem),
+        line-height: 130%
+      ),
+      middlest: (
+        font-size: fluid(1.6rem, 1.8rem),
+        line-height: 130%
+      ),
+      mid: (
+        font-size: fluid(1.6rem, 2rem),
+        line-height: 130%
+      ),
+      large: (
+        font-size: fluid(1.6rem, 2.2rem),
+        line-height: 130%
+      )
+    )
+  )
+);
+
+$spaces:(
+  0 : 0,
+  5 : 0.5rem,
+  10: 1rem,
+  20: 2rem,
+  30: 3rem,
+  40: 4rem,
+  60: 6rem,
+  80: 8rem
+);

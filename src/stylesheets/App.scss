@@ -1,0 +1,54 @@
+@import '~normalize.css/normalize';
+@import '~sass-mediaqueries/media-queries';
+
+@import 'core/functions';
+@import 'core/variables';
+@import 'core/reset';
+@import 'core/mixins';
+@import 'core/utilities';
+@import 'core/typography';
+@import 'core/basic';
+
+.nx-home {
+  height: 100%;
+}
+
+.nx-loading {
+  @include font-family(Passion, large);
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.nx-links {
+  &__item {
+    padding: 2rem;
+    border-bottom: 1px solid #e9e9e9;
+    transition: background 300ms ease-in-out;
+
+    &:hover {
+      background: #e9e9e9;
+    }
+  }
+
+  &__website {
+    @include font-family(Passion, large);
+    margin-bottom: 4rem;
+    color: color(red);
+  }
+
+  &__title {
+    @include font-family(Passion, mid);
+  }
+
+  &__link {
+    @include font-family(Passion, middlest);
+  }
+
+  &__links {
+    margin-bottom: 2rem;
+  }
+}
